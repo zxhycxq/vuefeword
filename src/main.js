@@ -3,13 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'normalize.css'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+/* eslint-disable */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: { App,
+		'my-component': {
+			template: `<div>这是一个局部的自定义组件，只能在当前Vue实例中使用</div>`,
+		}
+	},
   template: '<App/>'
 })
+// todo normalize
