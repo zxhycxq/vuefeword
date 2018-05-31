@@ -1,0 +1,5 @@
+*.css linguist-language=css
+*.scss linguist-language=scss
+*.js linguist-language=JavaScript
+*.vue linguist-language=Vue
+*.html linguist-language=html
