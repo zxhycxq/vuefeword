@@ -1,13 +1,14 @@
 <template>
   <div class="cxq-search-page">
      <div class="cxq-u-top-nav cxq-search-nav">
-       <input type="text" class="search-input" placeholder="请在此输入要查询的单词">
+       <input type="text" class="search-input" placeholder="请在此输入要查询的单词" v-on:input="queryWord()" autofocus="autofocus" v-model="message" >
        <img src="../assets/images/close-btn.png" alt="" class="cxq-close-icon">
      </div>
     <div class="result-wrap">
       <div class="have-try">
         <img src="../assets/images/chemistry-regular.png" alt="" class="cxq-menu-icon">
-        <p>试一试又不会</p>
+        <p @click="query()">试一试又不会</p>
+        <p>{{message}}</p>
       </div>
     </div>
   </div>
@@ -15,17 +16,32 @@
 
 <script>
 /* eslint-disable */
+import axios from 'axios'
+
 	export default {
 		name: 'HelloWorld',
 		data() {
 			return {
 				menuActive:true,
-				msg: 'feword'
+				msg: 'feword',
+        message:null,
 			}
 		},
     methods:{
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive
+			},
+      query:function () {
+				axios.get('/api/bdc/search/?word='+'good')
+						 .then(function(response){
+							 console.log(response);
+						 })
+						 .catch(function(err){
+							 console.log(err);
+						 });
+			},
+			queryWord:function (e) {
+        console.log(e);
 			}
     }
 	}

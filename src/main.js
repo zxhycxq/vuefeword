@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'normalize.css'
-
+import axios from 'axios'
 Vue.config.productionTip = false
-
+/* eslint-disable */
+// Vue.http.options.emulateJSON = true;
+Vue.prototype.$http = axios;
 /* eslint-disable */
 new Vue({
   el: '#app',

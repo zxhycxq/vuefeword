@@ -5,7 +5,7 @@ import About from '@/components/About'
 import Check from '@/components/Check'
 import Author from '@/components/Author'
 import Search from '@/components/Search'
-
+// Vue.http.options.emulateJSON = true;
 Vue.use(Router)
 
 export default new Router({
