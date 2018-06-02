@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.demo{
+  background-color: #fff!important;
+}
+@mixin  cxq-u-circle-btn{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px;
+}
+

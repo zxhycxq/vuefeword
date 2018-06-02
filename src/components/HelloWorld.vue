@@ -74,7 +74,8 @@ Vue.component('mycomponent',{
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped  lang="scss">
+  @import "../assets/css/base";
   h1, h2 {
     font-weight: normal;
   }
@@ -105,11 +106,7 @@ Vue.component('mycomponent',{
   }
 
   .cxq-u-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 80px;
+  @include cxq-u-circle-btn;
   }
 
   .cxq-btn-circle {

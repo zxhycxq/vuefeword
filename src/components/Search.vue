@@ -5,11 +5,13 @@
        <img src="../assets/images/close-btn.png" alt="" class="cxq-close-icon">
      </div>
     <div class="result-wrap">
-      <div class="have-try">
+      <Result></Result>
+     <!-- <div class="have-try">
         <img src="../assets/images/chemistry-regular.png" alt="" class="cxq-menu-icon">
         <p @click="query()">试一试又不会</p>
         <p>{{message}}</p>
-      </div>
+        <div class="demo">123</div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -17,9 +19,13 @@
 <script>
 /* eslint-disable */
 import axios from 'axios'
+import Result from '../Container/Result'
 
 	export default {
 		name: 'HelloWorld',
+    components:{
+			Result,
+    },
 		data() {
 			return {
 				menuActive:true,
@@ -48,10 +54,9 @@ import axios from 'axios'
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  html,body{
+<style scoped lang="scss">
+  @import "../assets/css/base";
 
-  }
   h1, h2 {
     font-weight: normal;
   }
@@ -69,6 +74,9 @@ import axios from 'axios'
     position: absolute;
     top: 0;
     left: 0;
+    p{
+      color:red;
+    }
   }
   .cxq-u-top-nav {
     background-color: blueviolet;
@@ -106,4 +114,6 @@ import axios from 'axios'
     align-items: center;
   }
   /* todo 占位符颜色*/
+  /* todo  https://github.com/imochen/hotcss*/
+  /* todo  圆形按钮、列表、介绍文字、顶部、查询结果状态等*/
 </style>
