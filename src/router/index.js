@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import About from '@/components/About'
-import Check from '@/components/Check'
-import Author from '@/components/Author'
-import Search from '@/components/Search'
+import Home from '@/Components/Home'
+import About from '@/Components/About'
+import Check from '@/Components/Check'
+import Author from '@/Components/Author'
+import Search from '@/Components/Search'
 // Vue.http.options.emulateJSON = true;
 Vue.use(Router)
 
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Home',
+      component: Home
     },
     {
       path: '/About',

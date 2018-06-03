@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import 'normalize.css'
 import axios from 'axios'
+
 Vue.config.productionTip = false
 /* eslint-disable */
 // Vue.http.options.emulateJSON = true;
@@ -20,4 +21,3 @@ new Vue({
 	},
   template: '<App/>'
 })
-// todo normalize

@@ -1,56 +1,17 @@
 <template>
   <div class="cxq-index-page">
-    <div class="cxq-left-menu"  v-bind:class="['cxqLeftMenu',menuActive?'cxqMenuActive':' ']">
-      <div class="cxq-user-info">
-        <img src="../assets/logo.png" class="cxq-menu-icon">
-        <p>我的名字是</p>
-      </div>
-      <ul class="cxq-left-nav">
-        <li>
-          <img src="../assets/images/wallet.png" alt="" class="cxq-menu-icon">
-          <span>标题1</span>
-        </li>
-        <li>
-          <img src="../assets/images/info.png" alt="" class="cxq-menu-icon">
-          <span>标题1</span>
-        </li>
-        <li>
-          <img src="../assets/images/check-box-outline.png" alt="" class="cxq-menu-icon">
-          <span>标题1</span>
-        </li>
-      </ul>
-    </div>
-    <div class="cxq-u-top-nav">
-      <div class="cxq-top-nav-left" @click="changeMenu()">
-        <img src="../assets/images/menu.png" class="cxq-menu-icon">
-        <span>菜单</span>
-      </div>
-      <router-link to="/Search">
-        <img src="../assets/images/search.png" class="cxq-menu-icon" >
-      </router-link>
-    </div>
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
     <h2 class="cxq-app-name">前端开发标题</h2>
     <span class="cxq-app-des">我是描述文字啊</span>
     <span class="cxq-app-des">我是描述文字啊</span>
     <p class="cxq-app-des">我是描述文字啊</p>
-    <br>
-    <mycomponent></mycomponent>
-    <br>
-    <router-link to="/About">关于页面</router-link>
-    <router-link to="/Author">Author页面</router-link>
-    <router-link to="/Check">Check页面</router-link>
-    <div class="cxq-u-circle cxq-btn-circle"><span>+</span></div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-import Vue from 'vue'
 	export default {
-		name: 'HelloWorld',
-		props: ['myMessage'],
+		name: 'Home',
 		data() {
 			return {
 				menuActive:true,
@@ -63,26 +24,15 @@ import Vue from 'vue'
 			}
     }
 	}
-Vue.component('mycomponent',{
-	template: `<div>这是一个自定义组件</div>`,
-	data () {
-		return {
-			message: 'hello world'
-		}
-	}
-})
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped  lang="scss">
-  @import "../assets/css/base";
+<style scoped>
   h1, h2 {
     font-weight: normal;
   }
 
   a {
     color: #42b983;
-    text-decoration: none;
   }
 
   a, span, p {
@@ -95,6 +45,7 @@ Vue.component('mycomponent',{
   }
 
   .cxq-app-name {
+
     font-weight: bold;
     padding: 10px 0;
   }
@@ -106,7 +57,11 @@ Vue.component('mycomponent',{
   }
 
   .cxq-u-circle {
-  @include cxq-u-circle-btn;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
   }
 
   .cxq-btn-circle {
@@ -122,7 +77,7 @@ Vue.component('mycomponent',{
     cursor: pointer;
   }
 
-  .cxq-u-top-nav {
+  .cxq-top-nav {
     background-color: blueviolet;
     display: flex;
     flex-direction: row;

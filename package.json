@@ -1,7 +1,7 @@
 {
   "name": "vuefeword",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "FeWord",
   "author": "zxhycxq <lcyxlqn@163.com>",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "hotcss": "2.2.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

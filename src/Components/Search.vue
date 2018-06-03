@@ -6,12 +6,12 @@
      </div>
     <div class="result-wrap">
       <Result></Result>
-     <!-- <div class="have-try">
-        <img src="../assets/images/chemistry-regular.png" alt="" class="cxq-menu-icon">
+      <div class="have-try">
+        <img src="../assets/images/chemistry-regular.png" class="cxq-menu-icon"  alt="试一试又不会" title="试一试又不会">
         <p @click="query()">试一试又不会</p>
         <p>{{message}}</p>
         <div class="demo">123</div>
-      </div>-->
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ import axios from 'axios'
 import Result from '../Container/Result'
 
 	export default {
-		name: 'HelloWorld',
+		name: 'Home',
     components:{
 			Result,
     },
@@ -53,7 +53,7 @@ import Result from '../Container/Result'
 	}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
   @import "../assets/css/base";
 

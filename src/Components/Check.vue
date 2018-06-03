@@ -1,17 +1,18 @@
 <template>
   <div class="cxq-index-page">
     <h1>{{ msg }}</h1>
-    <h2 class="cxq-app-name">作者</h2>
+    <h2 class="cxq-app-name">check</h2>
     <span class="cxq-app-des">我是描述文字啊</span>
     <span class="cxq-app-des">我是描述文字啊</span>
     <p class="cxq-app-des">我是描述文字啊</p>
+    <div class="cxq-u-circle cxq-btn-circle"><span>+</span></div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 	export default {
-		name: 'HelloWorld',
+		name: 'Home',
 		data() {
 			return {
 				menuActive:true,
@@ -26,7 +27,7 @@
 	}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
   h1, h2 {
     font-weight: normal;

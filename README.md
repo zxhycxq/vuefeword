@@ -1,11 +1,11 @@
-# vuefeword
+# FeWord
 
-> A Vue.js project
+> FeWord
 
-## Build Setup
+## 运行步骤
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
 # serve with hot reload at localhost:8080
@@ -18,4 +18,3 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
