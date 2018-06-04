@@ -8,5 +8,24 @@
   border-radius: 50%;
   text-align: center;
   line-height: 80px;
+  position: fixed;
+  bottom: 20px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+.cxq-u-circle {
+  @include cxq-u-circle-btn;
+}
+a, span, p {
+  font-family: 'Microsoft YaHei', '微软雅黑';
 }
 
+.cxq-btn-check-left{
+  left: 10%;
+  background-color: indianred;
+}
+.cxq-btn-check-right{
+  right: 10%;
+  background-color: deepskyblue;
+}

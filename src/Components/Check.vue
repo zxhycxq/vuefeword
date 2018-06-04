@@ -1,11 +1,15 @@
 <template>
-  <div class="cxq-index-page">
+  <div class="cxq-check-page">
     <h1>{{ msg }}</h1>
-    <h2 class="cxq-app-name">check</h2>
-    <span class="cxq-app-des">我是描述文字啊</span>
-    <span class="cxq-app-des">我是描述文字啊</span>
-    <p class="cxq-app-des">我是描述文字啊</p>
-    <div class="cxq-u-circle cxq-btn-circle"><span>+</span></div>
+    <div class="cxq-u-word-show-list"
+    @touchstart.stop.capture.prevent="touchstart"
+    @touchend.stop.capture.prevent="touchend"
+    @touchmove.stop.capture.prevent="touchmove"
+    >
+
+    </div>
+    <!--<div class="cxq-u-circle cxq-btn-check-right"><span>+</span></div>-->
+    <!--<div class="cxq-u-circle cxq-btn-check-left"><span>√</span></div>-->
   </div>
 </template>
 
@@ -16,47 +20,54 @@
 		data() {
 			return {
 				menuActive:true,
-				msg: 'feword'
+				msg: 'feword',
+				slideData:{
+					start:{x:null,y:null},
+					end:{x:null,y:null},
+        }
 			}
+		},
+		created() {
+			// console.log('加载了');
 		},
     methods:{
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive
-			}
+			},
+			touchstart(e){
+				this.slideData.start.x=e.targetTouches[0].clientX;
+				this.slideData.start.y=e.targetTouches[0].clientY;
+      },
+			touchend(e){
+				console.log(`touchend`,e);
+				this.slideData.end.x=e.changedTouches[0].clientX;
+				this.slideData.end.y=e.changedTouches[0].clientY;
+				console.log(`touchend`,e.changedTouches[0].clientX-this.slideData.start.x,e.changedTouches[0].clientY-this.slideData.start.y,);
+			},
+			touchmove(e){
+				var isMove=Math.abs(Math.sqrt(Math.pow(e.changedTouches[0].clientX-this.slideData.start.x,2)-Math.pow(e.changedTouches[0].clientY-this.slideData.start.y,2))).toFixed(0)
+				console.log(`touchmove`,isMove,isMove>60);
+      }
     }
 	}
 </script>
 
 
-<style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  a {
-    color: #42b983;
-  }
-
-  a, span, p {
-    font-family: 'Microsoft YaHei', '微软雅黑';
-  }
-
-  .cxq-index-page {
+<style scoped lang="scss">
+ @import '../assets/css/base';
+  .cxq-check-page {
     position: relative;
     overflow: hidden;
   }
-
-  .cxq-app-name {
-
-    font-weight: bold;
-    padding: 10px 0;
-  }
-
-  .cxq-app-des {
-    font-family: 'Microsoft YaHei', '微软雅黑';
-    padding: 1px 0;
-    font-size: 20px;
-  }
+.cxq-u-word-show-list{
+  width: 60%;
+  margin: 0 auto;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: darkcyan;
+}
 
   .cxq-u-circle {
     width: 80px;

@@ -85,9 +85,6 @@ Vue.component('mycomponent',{
     text-decoration: none;
   }
 
-  a, span, p {
-    font-family: 'Microsoft YaHei', '微软雅黑';
-  }
 
   .cxq-index-page {
     position: relative;
@@ -105,9 +102,7 @@ Vue.component('mycomponent',{
     font-size: 20px;
   }
 
-  .cxq-u-circle {
-  @include cxq-u-circle-btn;
-  }
+
 
   .cxq-btn-circle {
     position: fixed;
