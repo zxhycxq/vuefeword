@@ -32,11 +32,15 @@
     padding: 4px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    /*align-items: flex-start;*/
+    /*justify-content: flex-start;*/
     box-shadow: 0px 1px 2px #eee;
+    background: #eee; /* Fallback */
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0 / 2em 2em,
+    linear-gradient(-135deg, transparent 1.5em, #1296db 0);
     p,h2{
       color: #fff;
+      align-self: flex-start;
     }
     p{
       font-size: 20px;
