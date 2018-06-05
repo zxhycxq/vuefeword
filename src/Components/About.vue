@@ -11,7 +11,7 @@
 <script>
 /* eslint-disable */
 	export default {
-		name: 'Home',
+		name: 'About',
 		data() {
 			return {
 				menuActive:true,
