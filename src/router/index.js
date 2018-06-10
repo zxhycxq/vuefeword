@@ -5,10 +5,14 @@ import About from '@/Components/About'
 import Check from '@/Components/Check'
 import Author from '@/Components/Author'
 import Search from '@/Components/Search'
+import Word from '@/Components/Word'
+import NotFound from '@/Components/NotFound'
 // Vue.http.options.emulateJSON = true;
 Vue.use(Router)
 
 export default new Router({
+// mode:'history',
+// base:'__dirname',
   routes: [
     {
       path: '/',
@@ -34,6 +38,17 @@ export default new Router({
       path: '/Search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/Search/:id(\\d{2,10})',
+      name: 'Word',
+      component: Word
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      alias: '404',
+      component: NotFound
     }
   ]
 })
