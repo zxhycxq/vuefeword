@@ -1,10 +1,7 @@
 <template>
   <div class="cxq-index-page">
     <h1>{{ msg }}</h1>
-    <h2 class="cxq-app-name">前端开发标题</h2>
-    <span class="cxq-app-des">我是描述文字啊</span>
-    <span class="cxq-app-des">我是描述文字啊</span>
-    <p class="cxq-app-des">我是描述文字啊</p>
+  <p>wosi about页面</p>
   </div>
 </template>
 
@@ -18,6 +15,9 @@
 				msg: 'feword'
 			}
 		},
+    created(){
+		  console.log(`-`,this.$route);
+    },
     methods:{
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive

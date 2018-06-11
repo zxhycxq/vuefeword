@@ -7,6 +7,7 @@ import Author from '@/Components/Author'
 import Search from '@/Components/Search'
 import Word from '@/Components/Word'
 import NotFound from '@/Components/NotFound'
+import Feedback from '@/Components/Feedback'
 // Vue.http.options.emulateJSON = true;
 Vue.use(Router)
 
@@ -20,9 +21,24 @@ export default new Router({
       component: Home
     },
     {
+      path: '/Index',
+      redirect: { name: 'Home' },
+      component: Home
+    },
+    {
       path: '/About',
       name: 'About',
       component: About
+    },
+    {
+      path: '/About',
+      alias: '/Info',
+      component: About
+    },
+    {
+      path: '/feedback',
+      alias: '/feedback',
+      component: Feedback
     },
     {
       path: '/Check',

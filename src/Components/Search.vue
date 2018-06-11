@@ -2,13 +2,13 @@
   <div class="cxq-search-page">
      <div class="cxq-u-top-nav cxq-search-nav">
        <input type="text" class="search-input" placeholder="请在此输入要查询的单词" v-on:input="queryWord()" autofocus="autofocus" v-model="message" >
-       <img src="../assets/images/close-btn.png" alt="" class="cxq-close-icon">
+       <img src="../assets/images/close-btn.png" alt="" class="cxq-close-icon" @click="clearInput()">
      </div>
     <div class="result-wrap">
       <Result></Result>
       <div class="have-try">
         <img src="../assets/images/chemistry-regular.png" class="cxq-menu-icon"  alt="试一试又不会" title="试一试又不会">
-        <p @click="query()">试一试又不会</p>
+        <p @click="query()">试一试又不会12</p>
         <p>{{message}}</p>
         <div class="demo">123</div>
       </div>
@@ -37,10 +37,17 @@ import Result from '../Container/Result'
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive
 			},
+      clearInput(){
+        this.$data.message=''
+			  console.log(`== `,this.$data.message);
+      },
       query:function () {
-				axios.get('/api/bdc/search/?word='+'good')
+				axios.get('/api/bdc/search/?word='+`${this.$data.message}`)
 						 .then(function(response){
-							 console.log(response);
+						   if(response.data.status_code===0){
+						     var resultData=response.data.data;
+                 console.log(resultData.definition);
+               }
 						 })
 						 .catch(function(err){
 							 console.log(err);

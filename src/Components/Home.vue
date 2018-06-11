@@ -3,7 +3,7 @@
     <div class="cxq-left-menu"  v-bind:class="['cxqLeftMenu',menuActive?'cxqMenuActive':' ']">
       <div class="cxq-user-info">
         <img src="../assets/logo.png" class="cxq-menu-icon">
-        <p>我的名字是</p>
+        <p>我的名字是洒</p>
       </div>
       <ul class="cxq-left-nav">
         <li>
