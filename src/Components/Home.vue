@@ -73,7 +73,6 @@ Vue.component('mycomponent',{
 })
 </script>
 
-
 <style scoped  lang="scss">
   @import "../assets/css/base";
   h1, h2 {

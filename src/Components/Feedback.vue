@@ -1,38 +1,69 @@
 <template>
-  <div class="cxq-index-page">
-    <h1>{{ msg }}</h1>
-  <p>反馈页面</p>
+  <div class="cxq-u-dialog">
+    <div class="cxq-dialog-mask" v-if="isShow" @click="closeMask"></div>
+    <div class="cxq-u-dialog-container" v-if="isShow">
+      <div class="cxq-u-dialog-header" @click="closeMask">
+        <slot name="header">你看到我，那么default是没有设置的</slot>
+      </div>
+      <div class="cxq-u-dialog-center">
+        <slot name="center">内容信息</slot>
+      </div>
+    </div>
+    <p>反馈页面</p>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-	export default {
-		name: 'About',
-		data() {
-			return {
-				menuActive:true,
-				msg: 'feword'
-			}
-		},
-    created(){
-		  console.log(`-`,this.$route);
+  export default {
+    name: 'mdialog',
+    props: {
+      isShow: {
+        type: Boolean,
+        default: true,
+        required: true
+      },
     },
-    methods:{
-			changeMenu:function(){
-				this.$data.menuActive=!this.$data.menuActive
-			}
+    methods: {
+      closeMask: function () {
+        this.$emit ('on-close')
+      }
     }
-	}
+  }
 </script>
 
-<style scoped>
-  h1, h2 {
-    font-weight: normal;
+<style scoped lang="scss">
+  .cxq-u-dialog {
+    position: relative;
+    font-size: 14px;
   }
 
-  a {
-    color: #42b983;
+  .cxq-dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+
+  .cxq-u-dialog-container {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 200;
+    width: 200px;
+    height: 200px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #eee;
   }
 
 </style>

@@ -1,14 +1,20 @@
 <template>
   <div class="cxq-index-page">
     <h1>{{ msg }}</h1>
-  <p>wosi about页面</p>
+  <p>关于页面</p>
+    <mdialog :is-show="true" @on-close="closeDialog">
+    </mdialog>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import mdialog from '../Components/Feedback'
 	export default {
 		name: 'About',
+    components:{
+      mdialog
+    },
 		data() {
 			return {
 				menuActive:true,
@@ -17,10 +23,11 @@
 		},
     created(){
 		  console.log(`-`,this.$route);
+		  console.log(`==`,mdialog);
     },
     methods:{
-			changeMenu:function(){
-				this.$data.menuActive=!this.$data.menuActive
+      closeDialog(){
+        this.isShowPublish=false;
 			}
     }
 	}
