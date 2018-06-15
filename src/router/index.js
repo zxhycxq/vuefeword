@@ -12,13 +12,23 @@ import Feedback from '@/Components/Feedback'
 Vue.use(Router)
 
 export default new Router({
-// mode:'history',
-// base:'__dirname',
+  // mode: 'history',
+  // base: '__dirname',
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        title: '前端word',
+        description: '前端'
+      },
+      children: [
+        {
+          path: 'about',
+          component: About
+        }
+      ]
     },
     {
       path: '/Index',
@@ -53,7 +63,8 @@ export default new Router({
     {
       path: '/Search',
       name: 'Search',
-      component: Search
+      component: Search,
+      props: true
     },
     {
       path: '/Search/:id(\\d{2,10})',
@@ -68,3 +79,21 @@ export default new Router({
     }
   ]
 })
+/* Router.afterEach((to, from) => {
+  console.log(`after `)
+}) */
+// exact
+/* linkActiveClass: 'cxq-link',
+  linkExactActiveClass: 'cxq-link-active',
+  scrollBehavior (to, from, savedPosition) {
+  if (savedPosition) {
+    return savedPosition
+  } else {
+    return {x: 0, y: 0}
+  }
+},
+parseQuery (query) {
+},
+stringifyQuery (obj) {
+}
+fallback: true */

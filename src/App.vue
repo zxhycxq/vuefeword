@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <transition>
-    <router-view/>
+    <transition name="fade">
+      <router-view/>
     </transition>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from './Components/Footer'
+
 export default {
+  components: {Footer},
   name: 'App'
 }
 </script>
@@ -25,5 +29,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 </style>

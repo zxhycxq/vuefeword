@@ -41,6 +41,7 @@
     <router-link to="/About">关于页面</router-link>
     <router-link to="/Author">Author页面</router-link>
     <router-link to="/Check">Check页面</router-link>
+    <!--<router-link :to="{name: 'About'}">关于页面</router-link>-->
     <div class="cxq-u-circle cxq-btn-circle"><span>+</span></div>
   </div>
 </template>
@@ -57,6 +58,10 @@ import Vue from 'vue'
 				msg: 'feword'
 			}
 		},
+    created(){
+      console.log(`-`,this.$route);
+      console.log(`this  `,this);
+    },
     methods:{
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive

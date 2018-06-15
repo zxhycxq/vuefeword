@@ -2,6 +2,7 @@
   <div class="cxq-index-page">
     <h1>{{ msg }}</h1>
   <p>关于页面</p>
+    <p>项目地址：https://github.com/zxhycxq/vuefeword</p>
     <mdialog :is-show="true" @on-close="closeDialog">
     </mdialog>
   </div>
@@ -24,6 +25,7 @@ import mdialog from '../Components/Feedback'
     created(){
 		  console.log(`-`,this.$route);
 		  console.log(`==`,mdialog);
+		  console.log(`this  `,this);
     },
     methods:{
       closeDialog(){

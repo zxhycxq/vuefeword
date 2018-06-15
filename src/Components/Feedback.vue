@@ -6,7 +6,7 @@
         <slot name="header">你看到我，那么default是没有设置的</slot>
       </div>
       <div class="cxq-u-dialog-center">
-        <slot name="center">内容信息</slot>
+        <slot name="center">弹框内容</slot>
       </div>
     </div>
     <p>反馈页面</p>
@@ -21,7 +21,10 @@
       isShow: {
         type: Boolean,
         default: true,
-        required: true
+        required: true,
+        validate (value){
+          return typeof value === 'boolean'
+        }
       },
     },
     methods: {
