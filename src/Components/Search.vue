@@ -8,6 +8,7 @@
       <div class="have-try">
         <img src="../assets/images/chemistry-regular.png" class="cxq-menu-icon"  alt="试一试又不会" title="试一试又不会">
         <p @click="query()">试一试又不会12</p>
+        <p @click="queryWord">试一试又不会12</p>
         <p>{{message}}</p>
         <div class="demo">123</div>
       </div>
@@ -18,6 +19,7 @@
 <script>
 /* eslint-disable */
 import axios from 'axios'
+import { Action, mapActions } from 'vuex'
 	export default {
 		name: 'Search',
   /*  components:{
@@ -30,6 +32,11 @@ import axios from 'axios'
         message:null,
 			}
 		},
+    actions: {
+      increment (context) {
+        context.commit('increment')
+      }
+    },
     methods:{
 			changeMenu:function(){
 				this.$data.menuActive=!this.$data.menuActive

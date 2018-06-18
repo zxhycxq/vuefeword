@@ -3,15 +3,19 @@
     <div class="cxq-author-wrap">
       <h2>关于作者</h2>
       <p>邮箱：cxq-email@qq.com</p>
-      <p class="special">知乎：江湖人称</p>
+      <p class="special" @click="queryWord">知乎：江湖人称</p>
     </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import { mapActions } from 'vuex'
 	export default {
 		name: 'Author',
+    methods: mapActions([
+		   'queryWord'
+    ])
 	}
 </script>
 
