@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import './var.scss';
 .demo{
   background-color: #fff!important;
 }
@@ -27,5 +28,5 @@ a, span, p ,h2{
 }
 .cxq-btn-check-right{
   right: 10%;
-  background-color: deepskyblue;
+  background-color: $primaryColor;
 }
