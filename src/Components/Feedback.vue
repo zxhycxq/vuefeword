@@ -3,7 +3,7 @@
     <div class="cxq-dialog-mask" v-if="isShow" @click="closeMask"></div>
     <div class="cxq-u-dialog-container" v-if="isShow">
       <div class="cxq-u-dialog-header" @click="closeMask">
-        <slot name="header">你看到我，那么default是没有设置的</slot>
+        <slot name="header">感谢您的反馈，我会继续改进的！</slot>
       </div>
       <div class="cxq-u-dialog-center">
         <slot name="center">弹框内容</slot>

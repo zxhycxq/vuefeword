@@ -6,6 +6,7 @@ import Check from '@/Components/Check'
 import Author from '@/Components/Author'
 import Search from '@/Components/Search'
 import Word from '@/Components/Word'
+import Plan from '@/Components/Plan'
 import NotFound from '@/Components/NotFound'
 import Feedback from '@/Components/Feedback'
 // Vue.http.options.emulateJSON = true;
@@ -22,13 +23,7 @@ export default new Router({
       meta: {
         title: '前端word',
         description: '前端'
-      },
-      children: [
-        {
-          path: 'about',
-          component: About
-        }
-      ]
+      }
     },
     {
       path: '/Index',
@@ -41,11 +36,6 @@ export default new Router({
       component: About
     },
     {
-      path: '/About',
-      alias: '/Info',
-      component: About
-    },
-    {
       path: '/feedback',
       alias: '/feedback',
       component: Feedback
@@ -54,6 +44,11 @@ export default new Router({
       path: '/Check',
       name: 'Check',
       component: Check
+    },
+    {
+      path: '/Plan',
+      name: 'Plan',
+      component: Plan
     },
     {
       path: '/Author',

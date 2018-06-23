@@ -4,13 +4,16 @@
        <input type="text" class="search-input" placeholder="请在此输入要查询的单词" v-on:input="queryWord()" autofocus="autofocus" v-model="message" >
        <img src="../assets/images/close-btn.png" alt="" class="cxq-close-icon" @click="clearInput()">
      </div>
+    <div class="searchWord">
+      <p  @click="q()">您输入的单词是{{message}}</p>
+      <p>{{ $store.state.retData}}</p>
+    </div>
     <div class="result-wrap">
       <div class="have-try">
         <img src="../assets/images/chemistry-regular.png" class="cxq-menu-icon"  alt="试一试又不会" title="试一试又不会">
         <p @click="query()">试一试又不会12</p>
-        <p @click="queryWord">试一试又不会12</p>
         <p>{{message}}</p>
-        <div class="demo">123</div>
+        <div class="demo" @click="consolestate()">123</div>
       </div>
     </div>
   </div>
@@ -34,12 +37,14 @@ import { Action, mapActions } from 'vuex'
 		},
     actions: {
       increment (context) {
-        context.commit('increment')
+       console.log(`%c--12-- `,'color:blue;font-weight:bold', 12);
       }
     },
     methods:{
-			changeMenu:function(){
-				this.$data.menuActive=!this.$data.menuActive
+			q:function(){
+			 var msg = this.$data.message;
+			  console.log(`%c--message-- `,'color:blue;font-weight:bold', msg,this.$store);
+        this.$store.dispatch('queryWord', {word:msg})
 			},
       clearInput(){
         this.$data.message=''
@@ -58,7 +63,9 @@ import { Action, mapActions } from 'vuex'
 						 });
 			},
 			queryWord:function (e) {
-        // console.log(e);
+			},
+			consolestate:function (e) {
+        console.log(`%c--this.$store-- `,'color:red;font-weight:bold', this.$store.state);
 			}
     }
 	}
@@ -67,7 +74,12 @@ import { Action, mapActions } from 'vuex'
 
 <style scoped lang="scss">
   @import "../assets/css/base";
-
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
   h1, h2 {
     font-weight: normal;
   }

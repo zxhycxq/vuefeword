@@ -1,8 +1,7 @@
 <template>
   <div class="cxq-index-page">
     <div class="cxq-author-wrap">
-      <h2>关于作者2  {{count}}</h2>
-      <p>邮箱：cxq-email@qq.com</p>
+     <p>开发计划</p>
       <p class="special" @click="queryWord">知乎：江湖人称</p>
     </div>
   </div>
@@ -12,7 +11,7 @@
 /* eslint-disable */
 import { mapActions } from 'vuex'
 	export default {
-		name: 'Author',
+		name: 'Plan',
     data() {
 		  return {
         count:23
