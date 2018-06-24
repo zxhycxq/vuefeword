@@ -12,13 +12,14 @@
         </li>
         <li>
           <img src="../assets/images/info.png"  class="cxq-menu-icon"  alt="关于作者" title="关于作者">
-          <span>关于作者</span>
+          <span> <router-link to="/Author">关于作者</router-link></span>
         </li>
         <li>
           <img src="../assets/images/check-box-outline.png"  class="cxq-menu-icon"  alt="关于软件" title="关于软件">
-          <span>关于软件</span>
+          <span> <router-link to="/About">关于软件</router-link></span>
         </li>
       </ul>
+      <Divide></Divide>
     </div>
     <div class="cxq-u-top-nav">
       <div class="cxq-top-nav-left" @click="changeMenu()">
@@ -38,7 +39,7 @@
     <br>
     <mycomponent></mycomponent>
     <br>
-    <router-link to="/About">关于页面</router-link>
+    <router-link tag="div" to="/About" class="nav-link">关于页面</router-link>
     <router-link to="/Author">Author页面</router-link>
     <router-link to="/Check">Check页面</router-link>
     <!--<router-link :to="{name: 'About'}">关于页面</router-link>-->
@@ -49,9 +50,13 @@
 <script>
 /* eslint-disable */
 import Vue from 'vue'
+import Divide from '../Container/Divide'
 	export default {
 		name: 'Home',
 		props: ['myMessage'],
+    components: {
+		  Divide
+    },
 		data() {
 			return {
 				menuActive:true,
@@ -117,7 +122,7 @@ Vue.component('mycomponent',{
 
   .cxq-btn-circle span {
     color: #fff;
-    font-size: 30px;
+    font-size: 34px;
     cursor: pointer;
   }
 
@@ -152,12 +157,12 @@ Vue.component('mycomponent',{
     position: fixed;
     top: 0;
     left:0;
-    width: 25%;
+    width: $index-menu-width;
     height: 100%;
     background-color: #eee;
   }
   .cxqMenuActive{
-    left: -25%;
+    left: -$index-menu-width;
   }
 
   .cxq-user-info {
@@ -178,15 +183,23 @@ Vue.component('mycomponent',{
   }
 
   .cxq-left-nav li {
-
-    background-color: olivedrab;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: olivedrab;
+
   }
   .cxq-index-logo{
     width: 80%;
     box-shadow: 2px 4px 7px #eee;
+  }
+  .router-link-active .nav-link{
+    background-color: red;
+    color: #000;
+    border: 1px solid;
   }
 </style>

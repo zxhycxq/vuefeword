@@ -14,6 +14,8 @@
   color: #fff;
   font-size: 30px;
   font-weight: bold;
+  z-index: 100;
+  box-shadow: 2px 2px 1px 0px $circle-shadow-color;
 }
 .cxq-u-circle {
   @include cxq-u-circle-btn;
