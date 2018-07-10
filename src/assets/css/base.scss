@@ -14,8 +14,18 @@
   color: #fff;
   font-size: 30px;
   font-weight: bold;
-  z-index: 100;
+  z-index: 90;
   box-shadow: 2px 2px 1px 0px $circle-shadow-color;
+}
+.cxq-dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 .cxq-u-circle {
   @include cxq-u-circle-btn;

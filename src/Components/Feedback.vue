@@ -35,23 +35,11 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
   .cxq-u-dialog {
     position: relative;
     font-size: 14px;
   }
-
-  .cxq-dialog-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 100;
-  }
-
   .cxq-u-dialog-container {
     position: relative;
     top: 30%;
@@ -68,5 +56,4 @@
     border-radius: 2px;
     box-shadow: 1px 1px 2px #eee;
   }
-
 </style>

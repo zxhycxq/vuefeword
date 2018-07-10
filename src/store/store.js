@@ -1,26 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import { mutations } from './mutations'
 Vue.use(Vuex)
 
 const state = {
   word: 'good',
   num: 1,
-  retData: {}
+  retData: {},
+  menuActive: true,
+  maskActive: !true,
+  isShow: !true
 }
 
 const getters = {
   getResult: state => state.getResult
-}
-
-const mutations = {
-  add (state) {
-    state.num++
-  },
-  increment (state, resultData) {
-    state.retData = resultData.definition
-  }
 }
 
 const actions = {

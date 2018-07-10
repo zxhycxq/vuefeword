@@ -1,9 +1,10 @@
 <template>
   <div class="cxq-index-page">
-    <div class="cxq-left-menu"  v-bind:class="['cxqLeftMenu',menuActive?'cxqMenuActive':' ']">
+    <div class="cxq-dialog-mask" v-if="$store.state.isShow"  @click="$store.commit('changeMenu', { menuActive, isShow })"></div>
+    <div class="cxq-left-menu"  v-bind:class="['cxqLeftMenu',$store.state.menuActive?'cxqMenuActive':' ']">
       <div class="cxq-user-info">
         <img src="../assets/logo.png" class="cxq-menu-icon">
-        <p>我的名字是洒</p>
+        <p>这里是用户名称</p>
       </div>
       <ul class="cxq-left-nav">
         <li>
@@ -22,7 +23,7 @@
       <Divide></Divide>
     </div>
     <div class="cxq-u-top-nav">
-      <div class="cxq-top-nav-left" @click="changeMenu()">
+      <div class="cxq-top-nav-left" @click="$store.commit('changeMenu', { menuActive, isShow })">
         <img src="../assets/images/menu.png" class="cxq-menu-icon"  alt="菜单" title="菜单">
         <span>菜单</span>
       </div>
@@ -50,6 +51,7 @@
 <script>
 /* eslint-disable */
 import Vue from 'vue'
+import { mapMutations } from 'vuex'
 import Divide from '../Container/Divide'
 	export default {
 		name: 'Home',
@@ -59,8 +61,10 @@ import Divide from '../Container/Divide'
     },
 		data() {
 			return {
-				menuActive:true,
-				msg: 'feword'
+				msg: 'feword',
+        menuActive: true,
+        maskActive: !true,
+        isShow: !true
 			}
 		},
     created(){
@@ -68,9 +72,10 @@ import Divide from '../Container/Divide'
       console.log(`this  `,this);
     },
     methods:{
-			changeMenu:function(){
-				this.$data.menuActive=!this.$data.menuActive
-			}
+      ...mapMutations([
+        'closeMask',
+        'changeMenu'
+      ])
     }
 	}
 Vue.component('mycomponent',{
@@ -88,13 +93,10 @@ Vue.component('mycomponent',{
   h1, h2 {
     font-weight: normal;
   }
-
   a {
     color: #42b983;
     text-decoration: none;
   }
-
-
   .cxq-index-page {
     position: relative;
     overflow: hidden;
@@ -110,9 +112,6 @@ Vue.component('mycomponent',{
     padding: 1px 0;
     font-size: 20px;
   }
-
-
-
   .cxq-btn-circle {
     position: fixed;
     right: 10px;
@@ -144,12 +143,11 @@ Vue.component('mycomponent',{
   .cxq-top-nav span {
     color: #fff;
     font-size: 30px;
-
   }
 
   .cxq-menu-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     vertical-align: center;
   }
 
@@ -160,6 +158,7 @@ Vue.component('mycomponent',{
     width: $index-menu-width;
     height: 100%;
     background-color: #eee;
+    z-index: 200;
   }
   .cxqMenuActive{
     left: -$index-menu-width;
@@ -190,8 +189,7 @@ Vue.component('mycomponent',{
     justify-content: space-between;
     padding: 0 10px;
     box-sizing: border-box;
-    background-color: olivedrab;
-
+    margin: 4px 0;
   }
   .cxq-index-logo{
     width: 80%;
@@ -203,3 +201,4 @@ Vue.component('mycomponent',{
     border: 1px solid;
   }
 </style>
+<!--todo 切换动画 后退再返回的时候状态问题-->
